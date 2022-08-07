@@ -1936,13 +1936,28 @@ export class MoveAroundParentheses extends MoveInsideCharacter {
 
 @RegisterAction
 export class MoveAroundMarker extends MoveInsideCharacter {
-  keys = [
-    ['a', '⌜'],
-    ['a', '⌝'],
-    ['a', 'm'],
-  ];
+  keys = [ ['a', 'm'] ];
   charToMatch = '⌜';
   override includeSurrounding = true;
+}
+
+@RegisterAction
+export class MoveInsideMarker extends MoveInsideCharacter {
+  keys = [ ['a', 'm'] ];
+  charToMatch = '⌜';
+}
+
+@RegisterAction
+export class MoveAroundJustification extends MoveInsideCharacter {
+  keys = [ ['a', 'j'] ];
+  charToMatch = '⟨';
+  override includeSurrounding = true;
+}
+
+@RegisterAction
+export class MoveInsideJustification extends MoveInsideCharacter {
+  keys = [ ['a', 'j'] ];
+  charToMatch = '⟨';
 }
 
 @RegisterAction

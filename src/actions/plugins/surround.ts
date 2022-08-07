@@ -10,6 +10,8 @@ import {
   MoveAroundDoubleQuotes,
   MoveAroundParentheses,
   MoveAroundTag,
+  MoveAroundJustification,
+  MoveAroundMarker,
   MoveAroundSingleQuotes,
   MoveAroundSquareBracket,
   MoveInsideCharacter,
@@ -509,7 +511,8 @@ class SurroundHelper {
     },
     // aliases
     b: { left: '(', right: ')', removeSpace: false, movement: () => new MoveAroundParentheses() },
-    m: { left: '⌜', right: '⌝', removeSpace: false, movement: () => new MoveAroundParentheses() },
+    m: { left: '⌜', right: '⌝', removeSpace: false, movement: () => new MoveAroundMarker() },
+    j: { left: '⟨', right: '⟩', removeSpace: false, movement: () => new MoveAroundJustification() },
     r: { left: '[', right: ']', removeSpace: false, movement: () => new MoveAroundSquareBracket() },
     B: { left: '{', right: '}', removeSpace: false, movement: () => new MoveAroundCurlyBrace() },
     a: { left: '<', right: '>', removeSpace: false, movement: () => new MoveAroundCaret() },

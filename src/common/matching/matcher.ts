@@ -25,6 +25,8 @@ export class PairMatcher {
 
     '⌜': { match: '⌝', isNextMatchForward: true },
     '⌝': { match: '⌜', isNextMatchForward: false },
+    '⟨': { match: '⟩', isNextMatchForward: true },
+    '⟩': { match: '⟨', isNextMatchForward: false },
 
     // These characters can't be used for "%"-based matching, but are still
     // useful for text objects.
