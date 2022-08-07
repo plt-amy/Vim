@@ -1935,6 +1935,17 @@ export class MoveAroundParentheses extends MoveInsideCharacter {
 }
 
 @RegisterAction
+export class MoveAroundMarker extends MoveInsideCharacter {
+  keys = [
+    ['a', '⌜'],
+    ['a', '⌝'],
+    ['a', 'm'],
+  ];
+  charToMatch = '⌜';
+  override includeSurrounding = true;
+}
+
+@RegisterAction
 export class MoveInsideCurlyBrace extends MoveInsideCharacter {
   keys = [
     ['i', '{'],

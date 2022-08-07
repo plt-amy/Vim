@@ -23,6 +23,9 @@ export class PairMatcher {
     '}': { match: '{', isNextMatchForward: false },
     ']': { match: '[', isNextMatchForward: false },
 
+    '⌜': { match: '⌝', isNextMatchForward: true },
+    '⌝': { match: '⌜', isNextMatchForward: false },
+
     // These characters can't be used for "%"-based matching, but are still
     // useful for text objects.
     // matchesWithPercentageMotion can be overwritten with configuration.matchpairs
