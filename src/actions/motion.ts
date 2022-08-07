@@ -1943,7 +1943,7 @@ export class MoveAroundMarker extends MoveInsideCharacter {
 
 @RegisterAction
 export class MoveInsideMarker extends MoveInsideCharacter {
-  keys = [ ['a', 'm'] ];
+  keys = [ ['i', 'm'] ];
   charToMatch = '⌜';
 }
 
@@ -1956,7 +1956,7 @@ export class MoveAroundJustification extends MoveInsideCharacter {
 
 @RegisterAction
 export class MoveInsideJustification extends MoveInsideCharacter {
-  keys = [ ['a', 'j'] ];
+  keys = [ ['i', 'j'] ];
   charToMatch = '⟨';
 }
 
