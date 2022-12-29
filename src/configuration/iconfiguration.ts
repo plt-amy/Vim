@@ -17,7 +17,7 @@ export interface IKeyRemapping {
   silent?: boolean;
   // 'recursive' is calculated when validating, according to the config that stored the remapping
   recursive?: boolean;
-  commands?: Array<{ command: string; args: any[] } | string>;
+  commands?: Array<{ command: string; args: any[]; async?: boolean } | string>;
   source?: 'vscode' | 'vimrc';
 }
 

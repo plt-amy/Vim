@@ -493,12 +493,15 @@ export class Remapper implements IRemapper {
         for (const command of remapping.commands) {
           let commandString: string;
           let commandArgs: string[];
+          let commandAsync: boolean;
           if (typeof command === 'string') {
             commandString = command;
             commandArgs = [];
+            commandAsync = false;
           } else {
             commandString = command.command;
             commandArgs = command.args;
+            commandAsync = command.async || false;
           }
 
           if (commandString.slice(0, 1) === ':') {
@@ -516,9 +519,17 @@ export class Remapper implements IRemapper {
             }
             await modeHandler.updateView();
           } else if (commandArgs) {
-            await vscode.commands.executeCommand(commandString, commandArgs);
+            if (commandAsync) {
+              vscode.commands.executeCommand(commandString, commandArgs);
+            } else {
+              await vscode.commands.executeCommand(commandString, commandArgs);
+            }
           } else {
-            await vscode.commands.executeCommand(commandString);
+            if (commandAsync) {
+              vscode.commands.executeCommand(commandString);
+            } else {
+              await vscode.commands.executeCommand(commandString);
+            }
           }
 
           // TODO add test cases (silent defined in IKeyRemapping)
