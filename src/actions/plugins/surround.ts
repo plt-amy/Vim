@@ -17,6 +17,7 @@ import {
   MoveInsideCharacter,
   MoveInsideTag,
   MoveQuoteMatch,
+  MoveAroundUnderlying,
 } from '../motion';
 import { isIMovement } from '../baseMotion';
 import { MoveFullWordBegin, MoveWordBegin } from '../motion';
@@ -512,6 +513,7 @@ class SurroundHelper {
     // aliases
     b: { left: '(', right: ')', removeSpace: false, movement: () => new MoveAroundParentheses() },
     m: { left: '⌜ ', right: ' ⌝', removeSpace: true, movement: () => new MoveAroundMarker() },
+    u: { left: '⌞ ', right: ' ⌟', removeSpace: true, movement: () => new MoveAroundUnderlying() },
     j: { left: '⟨ ', right: ' ⟩', removeSpace: true, movement: () => new MoveAroundJustification() },
     r: { left: '[', right: ']', removeSpace: false, movement: () => new MoveAroundSquareBracket() },
     B: { left: '{', right: '}', removeSpace: false, movement: () => new MoveAroundCurlyBrace() },

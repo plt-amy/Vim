@@ -25,6 +25,8 @@ export class PairMatcher {
 
     '⌜': { match: '⌝', isNextMatchForward: true },
     '⌝': { match: '⌜', isNextMatchForward: false },
+    '⌞': { match: '⌟', isNextMatchForward: true },
+    '⌟': { match: '⌞', isNextMatchForward: false },
     '⟨': { match: '⟩', isNextMatchForward: true },
     '⟩': { match: '⟨', isNextMatchForward: false },
 

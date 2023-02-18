@@ -1948,6 +1948,19 @@ export class MoveInsideMarker extends MoveInsideCharacter {
 }
 
 @RegisterAction
+export class MoveAroundUnderlying extends MoveInsideCharacter {
+  keys = [ ['a', 'u'] ];
+  charToMatch = '⌞';
+  override includeSurrounding = true;
+}
+
+@RegisterAction
+export class MoveInsisdeUnderlying extends MoveInsideCharacter {
+  keys = [ ['i', 'u'] ];
+  charToMatch = '⌞';
+}
+
+@RegisterAction
 export class MoveAroundJustification extends MoveInsideCharacter {
   keys = [ ['a', 'j'] ];
   charToMatch = '⟨';
